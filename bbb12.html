@@ -90,7 +90,42 @@
         input[type="number"] {
             width: 60%;
         }
-    </style>
+    
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        border: 0;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    td::before {
+        content: attr(class);
+        font-weight: bold;
+        flex-basis: 40%;
+    }
+
+    input[type="number"] {
+        width: 60%;
+    }
+}
+
+</style>
 </head>
 <body>
 
