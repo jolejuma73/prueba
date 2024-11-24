@@ -91,102 +91,37 @@
             width: 60%;
         }
     
-body {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-.sidebar {
-    background-color: #333;
-    color: white;
-    width: 200px;
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: white;
-    font-size: 1em;
-    padding: 10px 15px;
-    border-radius: 5px;
-    width: 100%;
-    text-align: center;
-}
-
-.sidebar a:hover {
-    background-color: #575757;
-}
-
-.main-content {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.box-header {
-    text-align: center;
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.box-details {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.box-details label {
-    font-weight: bold;
-    font-size: 1em;
-}
-
-.box-details input[type="number"] {
-    width: 80px;
-    padding: 5px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-}
-
-table {
-    margin-top: 20px;
-    width: 80%;
-    border-collapse: collapse;
-    border: 1px solid #ccc;
-}
-
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        flex-direction: row;
-        overflow-x: auto;
-        width: 100%;
-        height: auto;
-    }
-
-    .main-content {
-        padding: 10px;
-    }
-
     table {
         width: 100%;
+        border: 0;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    td::before {
+        content: attr(class);
+        font-weight: bold;
+        flex-basis: 40%;
+    }
+
+    input[type="number"] {
+        width: 60%;
     }
 }
 
@@ -238,51 +173,19 @@ table {
 </head>
 <body>
 
-<div class="sidebar">
-    <a href="bbb1.html">Box 1</a>
-    <a href="bbb2.html">Box 2</a>
-    <a href="bbb3.html">Box 3</a>
-    <a href="bbb4.html">Box 4</a>
-    <a href="bbb5.html">Box 5</a>
-    <a href="bbb6.html">Box 6</a>
-    <a href="bbb7.html">Box 7</a>
-    <a href="bbb8.html">Box 8</a>
-    <a href="bbb9.html">Box 9</a>
-    <a href="bbb10.html">Box 10</a>
-    <a href="bbb11.html">Box 11</a>
-    <a href="bbb12.html">Box 12</a>
-</div>
-
-
-<div class="main-content">
-    <div class="box-header">Box 12</div>
-
-    <div class="box-details">
-        <div>
-            <label for="peso">Peso:</label>
-            <input type="number" id="peso" placeholder="Peso" />
-        </div>
-        <div>
-            <label for="horas">Horas:</label>
-            <input type="number" id="horas" min="1" max="24" value="0" placeholder="1-24" />
-        </div>
-    </div>
-
-
 
 
 
 <div class="box-header">Box 12</div>
 
 <div class="box-details">
-    <div>
-        <label for="peso">Peso:</label>
-        <input type="number" id="peso" placeholder="Peso" />
-    </div>
-    <div>
-        <label for="horas">Horas:</label>
-        <input type="number" id="horas" min="1" max="24" value="0" placeholder="1-24" />
-    </div>
+    <label for="peso">Peso:</label>
+    <input type="number" id="peso" placeholder="Peso" />
+</div>
+
+<div class="box-details">
+    <label for="horas">Horas:</label>
+    <input type="number" id="horas" min="1" max="24" value="0" placeholder="1-24" />
 </div>
 
 <table>
@@ -513,20 +416,19 @@ table {
 </tr>
     </tbody>
 </table>
-</div>
 
 <div class="nav-links">
-    <a href="bbb1.html">Box 1</a>
-    <a href="bbb2.html">Box 2</a>
-    <a href="bbb3.html">Box 3</a>
-    <a href="bbb4.html">Box 4</a>
-    <a href="bbb5.html">Box 5</a>
-    <a href="bbb6.html">Box 6</a>
-    <a href="bbb7.html">Box 7</a>
-    <a href="bbb8.html">Box 8</a>
-    <a href="bbb9.html">Box 9</a>
-    <a href="bbb10.html">Box 10</a>
-    <a href="bbb11.html">Box 11</a>
+    <a href="bbb1.html">Box 1</a> |
+    <a href="bbb2.html">Box 2</a> |
+    <a href="bbb3.html">Box 3</a> |
+    <a href="bbb4.html">Box 4</a> |
+    <a href="bbb5.html">Box 5</a> |
+    <a href="bbb6.html">Box 6</a> |
+    <a href="bbb7.html">Box 7</a> |
+    <a href="bbb8.html">Box 8</a> |
+    <a href="bbb9.html">Box 9</a> |
+    <a href="bbb10.html">Box 10</a> |
+    <a href="bbb11.html">Box 11</a> |
     <a href="bbb12.html">Box 12</a>
 </div>
 
