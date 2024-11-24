@@ -339,6 +339,11 @@
     let totalFiebreFactors = 0;
 
     // Calcular factores de fiebre
+   function calculateFiebreFactors() {
+    const peso = parseFloat(document.getElementById('peso')?.value) || 0;
+    let totalFiebreFactors = 0;
+
+    // Calcular factores de fiebre
     document.querySelectorAll('.factor-fiebre').forEach(input => {
         const factor = parseFloat(input.dataset.factor) || 0;
         const valor = parseFloat(input.value) || 0;
