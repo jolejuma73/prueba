@@ -362,6 +362,12 @@ document.querySelectorAll('.factor-fiebre').forEach(input => {
 });
 
 
+	document.getElementById('vofitq').addEventListener('input', calculateFiebreFactors);
+document.querySelectorAll('.factor-fiebre').forEach(input => {
+    input.addEventListener('input', calculateFiebreFactors);
+});
+
+
     // Calcular pérdidas insensibles
     function calculatePerdidasInsensibles() {
         const peso = parseFloat(document.getElementById('peso').value) || 0;
