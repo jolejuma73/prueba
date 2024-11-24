@@ -334,26 +334,29 @@
     }
 
   // Calcular factores de fiebre
+   function calculateFiebreFactors() {
+    const peso = parseFloat(document.getElementById('peso')?.value) || 0;
+    let totalFiebreFactors = 0;
+
+    // Calcular factores de fiebre
     document.querySelectorAll('.factor-fiebre').forEach(input => {
         const factor = parseFloat(input.dataset.factor) || 0;
         const valor = parseFloat(input.value) || 0;
         const resultado = peso * valor * factor;
         const valorFiebreCell = input.nextElementSibling;
-        if (valorFiebreCell) {
-            valorFiebreCell.value = resultado.toFixed(2);
-        }
-
+        if (valorFiebreCell) valorFiebreCell.value = resultado.toFixed(2);
         totalFiebreFactors += resultado;
     });
 
-    // Sumar el valor de "Vómitos/Sudor/Fiebre/Tqn" al cálculo de fiebre
-    const vomitosFiebreTqn = parseFloat(document.getElementById('vofitq')?.value) || 0; // Cambio aquí
+    // Sumar el valor de vómitos/sudor/fiebre/TQN
+    const vomitosFiebreTqn = parseFloat(document.getElementById('vofitq')?.value) || 0;
     totalFiebreFactors += vomitosFiebreTqn;
 
-    // Actualizar el campo de "Cálculo de Fiebre y Tqn"
+    // Actualizar el total de fiebre y TQN
     document.getElementById('calculofiebretqn').value = totalFiebreFactors.toFixed(2);
     calculateTotals();
 }
+
 
 	document.getElementById('vofitq').addEventListener('input', calculateFiebreFactors);
 document.querySelectorAll('.factor-fiebre').forEach(input => {
